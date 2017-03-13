@@ -11,7 +11,7 @@
 # Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
 ##
 
-# Default server configuration
+# Default server configuration(CONFIGURATION PAR DÉFAUT DU SERVEUR)
 #
 server {
 	listen 80 default_server;
@@ -35,9 +35,9 @@ server {
 
 	root /var/www/html;
 
-	# Add index.php to the list if you are using PHP
+	# Add index.php to the list if you are using PHP (AJOUT DE L'ENTREE index.php À LA LISTE DE FICHIERS WEB DE BASE AUTORISÉS)
 	index index.php index.html index.htm index.nginx-debian.html;
-
+	# AJOUT DE localhost COMME NOM DU SERVEUR //ADRESSE IP DU SERVEUR DANS D'AUTRES CAS
 	server_name localhost;
 
 	location / {
@@ -49,7 +49,7 @@ server {
 	}
 
 	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-	#
+	# DÉCOMMENTEZ SEULEMENT LES LIGNES SUIVANTES COMME CI-DESSOUS
 	location ~ \.php$ {
 		include snippets/fastcgi-php.conf;
 	#
@@ -65,8 +65,9 @@ server {
 	location ~ /\.ht {
 		deny all;
 	}
-}
+}	
 
+################ ET C'EST OK! CI DESSOUS, LES PARAMETRES POUR USAGES DE VHOSTS AVEC NGINX ###############
 
 # Virtual Host configuration for example.com
 #
